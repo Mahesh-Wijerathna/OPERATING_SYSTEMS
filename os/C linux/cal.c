@@ -41,6 +41,7 @@ int main() {
         operation = 'D';
 
 
+
     printf("Enter the first number: ");
     scanf("%f", &num1);
 
