@@ -24,8 +24,22 @@ int main() {
     char operation;
     float num1, num2, result;
 
-    printf("Enter the operation (+, -, *, /): ");
+    printf("Enter the operation (A,S,M,D): ");
     scanf(" %c", &operation);
+    if(operation != 'A' || operation != 'S' || operation != 'M' || operation != 'D' || operation != 'a' || operation != 's' || operation != 'm' || operation != 'd')
+    {
+        printf("Error: Invalid operation.\n");
+        return 0;
+    }
+    if(operation == 'a')
+        operation = 'A';
+    if(operation == 's')
+        operation = 'S';
+    if(operation == 'm')
+        operation = 'M';
+    if(operation == 'd')
+        operation = 'D';
+
 
     printf("Enter the first number: ");
     scanf("%f", &num1);
@@ -34,19 +48,19 @@ int main() {
     scanf("%f", &num2);
 
     switch (operation) {
-        case '+':
+        case 'A':
             add(num1, num2, &result);
             printf("Result: %.2f\n", result);
             break;
-        case '-':
+        case 'S':
             subtract(num1, num2, &result);
             printf("Result: %.2f\n", result);
             break;
-        case '*':
+        case 'M':
             multiply(num1, num2, &result);
             printf("Result: %.2f\n", result);
             break;
-        case '/':
+        case 'D':
             divide(num1, num2, &result);
             if (result != 0) {
                 printf("Result: %.2f\n", result);
